@@ -13,33 +13,20 @@ export default class SimpleData extends React.Component {
     }
   }
   tick() {
-    // fail: oldData and oldData++ always be 0
+
+    // way1:
     // let oldData = this.state.seconds;
-    // console.log(oldData++);
+    // oldData++;
     // this.setState({
-    //   seconds: oldData++
+    //   seconds: oldData
     // })
 
-    // good
-    // let oldData = this.state.seconds;
-    // this.setState({
-    //   seconds: oldData + 1
-    // });
-
-    // fail: should be state => (...)
-    // this.setState(state => {
-    //   seconds: state.seconds++
-    // });
-
-    // fail: should be `state.seconds + 1`
-    this.setState(state => ({
-      seconds: state.seconds++
-    }));
-
+    // way2:
     // this.setState(state => ({
     //   seconds: ++state.seconds
     // }));
 
+    // way3:
     this.setState(state => ({
       seconds: state.seconds + 1
     }));
