@@ -13,12 +13,15 @@ import './App.css';
 // import TicTacToe4 from './views/0105-04-Tic-Tac-Toe';
 // import TicTacToe5 from './views/0105-05-Tic-Tac-Toe';
 // import TicTacToe6 from './views/0105-06-Tic-Tac-Toe';
-import TicTacToe7 from './views/0105-07-Tic-Tac-Toe';
+// import TicTacToe7 from './views/0105-07-Tic-Tac-Toe';
+// import TicTacToe8 from './views/0105-08-Tic-Tac-Toe';
+// import TicTacToe9 from './views/0105-09-Tic-Tac-Toe';
+import TicTacToe10 from './views/0105-10-Tic-Tac-Toe';
 
 class App extends Component {
   render() {
     return (
-      <TicTacToe7 />
+      <TicTacToe10 />
     )
   }
 }
