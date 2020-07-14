@@ -87,7 +87,7 @@ function Comment(props) {
 
 // utils
 function formatDate(date) {
-  return date.toLocalDateString();
+  return new Date(date).toLocaleDateString();
 }
 
 function App() {
