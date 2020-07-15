@@ -23,7 +23,7 @@
 
 ### 4. 组件 && Props
 
-+ [0405](./demos/react-docs-guide-0405): 提取组件, 涉及如何拆分组件，举了 `Comment` 组件的例子.
++ [0405](https://github.com/Jesonhu/react-study/tree/master/demos/react-docs-guide-0405): 提取组件, 涉及如何拆分组件，举了 `Comment` 组件的例子.
 
 ### 5. State & 生命周期
 

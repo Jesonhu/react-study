@@ -24,7 +24,7 @@ console.log(doubled);
 
 [](lists-and-keys-0801)
 
-查看案例 [lists-and-keys-0801](./demos/lists-and-keys-0801)
+查看案例 [lists-and-keys-0801](https://github.com/Jesonhu/react-study/tree/master/demos/lists-and-keys-0801)
 
 ## 基础列表组件
 
@@ -32,7 +32,7 @@ console.log(doubled);
 
 我们可以把前面的例子重构成一个组件，这个组件接收 numbers 数组作为参数并输出一个元素列表。
 
-查看案例 [lists-and-keys-0802](./demos/lists-and-keys-0802)
+查看案例 [lists-and-keys-0802](https://github.com/Jesonhu/react-study/tree/master/demos/lists-and-keys-0802)
 
 将会看到一个警告 `a key should be provided for list items`，意思是当你创建一个元素时，必须包括一个特殊的 key 属性
 
@@ -62,7 +62,7 @@ const todoItems = todos.map((todo, index) =>
 
 总结: 怎么理解上面的话呢，`key` 的作用是帮助 React 识别哪些元素改变了，提高性能。所以在循环的时候就应该指定 `key`。即上面的案例中 `ListItem` 使用组件的地方指定 `key`。因为这里是循环的地方。而组件中的 `li` 元素上已经在渲染组件了。
 
-查看案例 [lists-and-keys-0803](./demos/lists-and-keys-0803)
+查看案例 [lists-and-keys-0803](https://github.com/Jesonhu/react-study/tree/master/demos/lists-and-keys-0803)
 
 一个好的经验法则是：在 map() 方法中的元素需要设置 key 属性。
 
@@ -70,4 +70,4 @@ const todoItems = todos.map((todo, index) =>
 
 数组元素中使用的 key 在其兄弟节点之间应该是独一无二的。然而，它们不需要是全局唯一的。当我们生成两个不同的数组时，我们可以使用相同的 key 值：
 
-查看案例 [lists-and-keys-0804](./demos/lists-and-keys-0804)
+查看案例 [lists-and-keys-0804](https://github.com/Jesonhu/react-study/tree/master/demos/lists-and-keys-0804)
