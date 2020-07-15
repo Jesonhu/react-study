@@ -100,11 +100,12 @@ https://zh-hans.reactjs.org/docs/forms.html
 
 案例版本 `react: v16.12.0` `react-dom: v16.12.0` 出现了下面报错
 
-![](https://github.com/Jesonhu/react-study/tree/master/assets/imgs/20200715114828.jpg ':class=preview_img')
+![preview_img](https://jesonhu.github.io/react-study/assets/imgs/20200715114828.jpg ':class=preview_img')
 
 ## 受控组件的替代品
 
 有时使用受控组件会很麻烦，因为你需要为数据变化的每种方式都编写事件处理函数，并通过一个 React 组件传递所有的输入 state。当你将之前的代码库转换为 React 或将 React 应用程序与非 React 库集成时，这可能会令人厌烦。在这些情况下，你可能希望使用非受控组件, 这是实现输入表单的另一种方式。
 
-成熟的解决方案
+## 成熟的解决方案
+
 如果你想寻找包含验证、追踪访问字段以及处理表单提交的完整解决方案，使用 [Formik](https://jaredpalmer.com/formik) 是不错的选择。然而，它也是建立在受控组件和管理 state 的基础之上 —— 所以不要忽视学习它们。

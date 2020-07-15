@@ -8,9 +8,9 @@
   + [7. 条件渲染](./docs/core-conditional-rendering.md)
   + [8. 列表 & key](./docs/core-lists-and-keys.md)
   + [9. 表单](./docs/core-forms.md)
-  + [10. 状态提升]()
-  + [11. 组合 vs 继承]()
-  + [12. React 哲学]()
+  + [10. 状态提升](./docs/core-lifting-state-up.md)
+  + [11. 组合 vs 继承](./docs/composition-vs-inheritance.md)
+  + [12. React 哲学](./docs/core-thinking-in-react.md)
 
 + 高级指引
   + 无障碍
