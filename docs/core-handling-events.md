@@ -55,7 +55,7 @@ function ActionLink() {
 
 当你使用 ES6 class 语法定义一个组件的时候，通常的做法是将事件处理函数声明为 class 中的方法。例如，下面的 Toggle 组件会渲染一个让用户切换开关状态的按钮：
 
-查看案例 [Demos-0601](../demos/handling-events-0601)
+查看案例 [Demos-0601](https://github.com/Jesonhu/react-study/tree/master/demos/handling-events-0601)
 
 你必须谨慎对待 JSX 回调函数中的 this。在 JavaScript 中，class 组件的方法默认不会绑定 this。如果你忘记绑定 this.handleClick 并把它传入了 onClick，当你调用这个函数的时候 this 的值为 undefined。
 
