@@ -29,3 +29,82 @@ https://zh-hans.reactjs.org/docs/forms.html
 由于在表单元素上设置了 `value` 属性，因此显示的值将始终为 `this.state.username`，这使得 React 的 state 成为唯一数据源。由于 `handleUserNameChange` 在每次按键时都会执行并更新 React 的 state，因此显示的值将随着用户输入而更新。
 
 对于受控组件来说，输入的值始终由 React 的 state 驱动。你也可以将 value 传递给其他 UI 元素，或者通过其他事件处理函数重置，但这意味着你需要编写更多的代码。
+
+## textarea 标签
+
+在 HTML 中, `<textarea>` 元素通过其子元素定义其文本:
+
+```html
+<textarea>
+  你好， 这是在 text area 里的文本
+</textarea>
+```
+
+而在 React 中，`<textarea>` 使用 value 属性代替。这样，可以使得使用 `<textarea>` 的表单和使用单行 input 的表单非常类似
+
+案例 [form-0901](https://github.com/Jesonhu/react-study/tree/master/demos/form-0901)
+
+## select 标签
+
+在 HTML 中，`<select>` 创建下拉列表标签。例如，如下 HTML 创建了水果相关的下拉列表：
+
+```html
+<select>
+  <option value="grapefruit">葡萄柚</option>
+  <option value="lime">酸橙</option>
+  <option selected value="coconut">椰子</option>
+  <option value="mango">芒果</option>
+</select>
+```
+
+请注意，由于 `selected` 属性的缘故，椰子选项默认被选中。React 并不会使用 `selected` 属性，而是在根 `select` 标签上使用 `value` 属性。这在受控组件中更便捷，因为您只需要在根标签中更新它。
+
+案例 [form-0901](https://github.com/Jesonhu/react-study/tree/master/demos/form-0901)
+
+!> 总结: 原生下拉选项 `select` 选中某一项是通过 `options` 添加 `selected` 属性实现的。但在 React 有点不同, 是通过 `select` 的 `value` 属性控制的。有了这个属性可以不设置 `options` 的 `selected` 属性就能达到控制某项选中的效果。
+
+总的来说，这使得 `<input type="text">`, `<textarea>` 和 `<select>` 之类的标签都非常相似—它们都接受一个 value 属性，你可以使用它来实现受控组件。
+
+!> 注意
+你可以将数组传递到 value 属性中，以支持在 select 标签中选择多个选项：
+
+```js
+<select multiple={true} value={['B', 'C']}>
+```
+
+## 文件 input 标签
+
+在 HTML 中，`<input type="file">` 允许用户从存储设备中选择一个或多个文件，将其上传到服务器，或通过使用 JavaScript 的 File API 进行控制。
+
+```js
+<input type="file" />
+```
+
+因为它的 value 只读，所以它是 React 中的一个非受控组件。将与其他非受控组件[在后续文档中](https://zh-hans.reactjs.org/docs/uncontrolled-components.html#the-file-input-tag)一起讨论。
+
+## 处理多个输入
+
+当需要处理多个 `input` 元素时，我们可以给每个元素添加 `name` 属性，并让处理函数根据 `event.target.name` 的值选择要执行的操作。
+
+案例 [form-0902](https://github.com/Jesonhu/react-study/tree/master/demos/form-0902)
+
+!> 当前案例 `onChange` 使用相同的处理函数，所以依赖 `name` 属性用于标识当前改变的是哪一个。如果采取不同处理函数的方式可以省略掉 `name` 属性。
+
+## 受控输入空值
+
+在[受控组件](https://zh-hans.reactjs.org/docs/forms.html#controlled-components)上指定 value 的 prop 会阻止用户更改输入。如果你指定了 value，但输入仍可编辑，则可能是你意外地将value 设置为 undefined 或 null。
+
+下面的案例演示了这一点。（输入最初被锁定，但在短时间延迟后变为可编辑。）
+
+案例 [form-0903](https://github.com/Jesonhu/react-study/tree/master/demos/form-0903)
+
+案例版本 `react: v16.12.0` `react-dom: v16.12.0` 出现了下面报错
+
+![](https://github.com/Jesonhu/react-study/tree/master/assets/imgs/20200715114828.jpg ':class=preview_img')
+
+## 受控组件的替代品
+
+有时使用受控组件会很麻烦，因为你需要为数据变化的每种方式都编写事件处理函数，并通过一个 React 组件传递所有的输入 state。当你将之前的代码库转换为 React 或将 React 应用程序与非 React 库集成时，这可能会令人厌烦。在这些情况下，你可能希望使用非受控组件, 这是实现输入表单的另一种方式。
+
+成熟的解决方案
+如果你想寻找包含验证、追踪访问字段以及处理表单提交的完整解决方案，使用 [Formik](https://jaredpalmer.com/formik) 是不错的选择。然而，它也是建立在受控组件和管理 state 的基础之上 —— 所以不要忽视学习它们。
