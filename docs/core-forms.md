@@ -100,7 +100,7 @@ https://zh-hans.reactjs.org/docs/forms.html
 
 案例版本 `react: v16.12.0` `react-dom: v16.12.0` 出现了下面报错
 
-![](https://github.com/Jesonhu/react-study/tree/master/assets/imgs/20200715114828.jpg ':class=preview_img')
+![preview_img](https://jesonhu.github.io/react-study/assets/imgs/20200715114828.jpg ':class=preview_img')
 
 ## 受控组件的替代品
 
