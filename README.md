@@ -18,3 +18,13 @@
 + [0105-05-Tic-Tac-Toe](./src/views/0105-05-Tic-Tac-Toe)--判断胜者实现调整结构
 + [0105-06-Tic-Tac-Toe](./src/views/0105-06-Tic-Tac-Toe)--函数命名规范化
 + [0105-07-Tic-Tac-Toe](./src/views/0105-07-Tic-Tac-Toe)--"X" or "O" 判断当前操作的玩家.
+
+## 文档配套案例
+
+### 4. 组件 && Props
+
++ [0405](./demos/react-docs-guide-0405): 提取组件, 涉及如何拆分组件，举了 `Comment` 组件的例子.
+
+### 5. State & 生命周期
+
++ [0501]: State & 生命周期

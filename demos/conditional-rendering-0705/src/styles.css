@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Comment 组件样式 */
+.comment__userinfo {
+  display: flex;
+  align-items: center;
+}
+
+.comment__avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.comment__user-name {
+  flex: 1;
+  padding-left: 8px;
+}
+
+.comment__text,
+.comment__date {
+  padding-left: 38px;
+}
+
+.warning {
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 14pt;
+  color: white;
+}
