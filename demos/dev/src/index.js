@@ -2,37 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './styles.css'
 
-const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { username: '' }
+  }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('提交的名字', this.state.username)
+  }
 
-function Blog(props) {
-  const posts = props.posts
+  handleUserNameChange(e) {
+    const nowValue = e.target.value
+    this.setState({ username: nowValue })
+  }
 
-  const sidebar = (
-    <ul>
-      {posts.map((post) => 
-        <li key={post.id}>{post.title}</li>  
-      )}
-    </ul>
-  )
-
-  const content = posts.map((post) =>
-    <div key={post.id}>
-      <h3>{post.title}</h3>
-      <p>{post.content}</p>
-    </div>
-  )
-
-  return(
-    <div className="blog">
-      <div className="blog__sidebar">{sidebar}</div>
-      <div className="blog__content">{content}</div>
-    </div>
-  )
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+        <label className="form__form-item">
+          名字:
+          <input type="text" value={this.state.username} onChange={this.handleUserNameChange.bind(this)} />
+        </label>
+        <input type="submit" value="提交" className="form__submit-button" />
+      </form>
+    )
+  }
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Blog posts={posts} />, rootElement);
+ReactDOM.render(<NameForm />, rootElement);
