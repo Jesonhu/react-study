@@ -78,21 +78,3 @@ html,body,#root {
   height: 100%; 
   background: pink;
 }
-
-.fancyBorder {
-  padding: 10px 10px;
-  border: 10px solid;
-}
-
-.fancyBorder--blue {
-  border-color: blue;
-}
-
-.dialog__title {
-  margin: 0;
-  font-family: sans-serif;
-}
-
-.dialog__message {
-  font-size: larger;
-}

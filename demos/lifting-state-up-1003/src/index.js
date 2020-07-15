@@ -47,9 +47,9 @@ function tryConvertTemperature(temperature, covert) {
  */
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
-    return <p>水沸腾了, 当前摄氏度水温: {props.celsius}℃</p>
+    return <p>水沸腾了, 当前水温: {props.celsius}℃</p>
   }
-  return <p>水未沸腾, 当前摄氏度水温: {props.celsius}℃</p>
+  return <p>水未沸腾, 当前水温: {props.celsius}℃</p>
 }
 
 const scaleNames = {
@@ -122,7 +122,7 @@ class Calculator extends React.Component {
           temperature={fahrenheitTemperature}
           onTemperatureChange={this.handleTemperatureChange.bind(this)} />
         <br/>
-        <BoilingVerdict celsius={celsiusTemperature === '' ? 0 : parseFloat(celsiusTemperature)} />
+        <BoilingVerdict celsius={parseFloat(celsiusTemperature)} />
       </div>
     )
   }
