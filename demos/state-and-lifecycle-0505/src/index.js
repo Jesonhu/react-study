@@ -1,31 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
-// import App from "./App";
 
-// # State & 生命周期
-// @see https://react.docschina.org/docs/state-and-lifecycle.html
-
-// 在元素渲染章节中，我们只了解了一种更新 UI 界面的方法。
-// 通过调用 ReactDOM.render() 来修改我们想要渲染的元素：
-
-// function tick() {
-//   const element = (
-//     <div>
-//       <h1>Hello, world!</h1>
-//       <h2>It is {new Date().toLocaleTimeString()}.</h2>
-//     </div>
-//   );
-//   ReactDOM.render(
-//     element,
-//     document.getElementById('root')
-//   );
-// }
-
-// setInterval(tick, 1000);
-
-// 在本章节中，我们将学习如何封装真正可复用的 Clock 组件。
-// 它将设置自己的计时器并每秒更新一次。
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -51,7 +27,7 @@ class Clock extends React.Component {
     // this.timerId = setInterval(function() {
     //   self.tick()
     // }, 1000)
-    // 这种方式可以保证 this 指向正确，比较推荐先箭头函数方式
+    // 上面这种方式可以保证 this 指向正确，但比较推荐下面箭头函数方式
 
     const delayTime = this.props.delayTime
     this.timerId = setInterval(() => {
@@ -76,15 +52,5 @@ class Clock extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <div>
-      <Clock/>
-      <Clock delayTime={2000}/>
-      <Clock delayTime={3000}/>
-    </div>
-  )
-}
-
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Clock />, rootElement);
