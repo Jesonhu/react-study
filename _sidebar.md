@@ -19,8 +19,8 @@
   + [12. React 哲学](./docs/core-thinking-in-react.md)
 
 + [高级指引](https://react.docschina.org/docs/accessibility.html)
-  + 无障碍
-  + 代码分割
+  + [无障碍](./docs/high-accessibility.md)
+  + [代码分割](./docs/high-code-splitting.md)
   + Context
   + 错误边界
   + Refs 转发
@@ -43,3 +43,5 @@
   + Web Components
 
 + Hook
+
++ [React-router](./docs/router-react-router.md)
