@@ -158,3 +158,14 @@ function ActionLink(props) {
 上述两种方式是等价的，分别通过 `箭头函数` 和 `Function.prototype.bind` 来实现。
 
 在这两种情况下，React 的事件对象 `e` 会被作为 `第二个参数` 传递。如果通过箭头函数的方式，事件对象必须显式的进行传递，而通过 `bind` 的方式，事件对象以及更多的参数将会被隐式的进行传递。
+
+## 事件触发器
+
+`React` 中某些原生 `dom` 元素例如 `div input button` 等支持哪些事件触发器呢? 下面是一个原生 dom 元素在 react 中支持的世界触发器帮助列表。
+
+|触发器名|代表元素|说明|新增版本|
+|--|--|--|--|
+|`onBlur`|`div` 等|失去焦点|-|
+|`onFocus`|`div` 等|焦点事件|-|
+|`onChange`|`input` 等|值改变时触发|-|
+|`onClick`|`button、div` 等 |元素点击触发, 事件处理函数可选名为 `onClickHandler`|-|
