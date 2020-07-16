@@ -19,7 +19,9 @@ const BasicExample = () => (
 
       <hr />
 
-      {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/topics" component={Topics} />
     </div>
   </Router>
 )
@@ -32,7 +34,7 @@ function About() {
   return <h2>This is page About</h2>
 }
 
-const Topics = ({ match, routes }) => (
+const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
     <ul>
@@ -47,7 +49,12 @@ const Topics = ({ match, routes }) => (
       </li>
     </ul>
 
-    {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
+    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route
+      exact
+      path={match.url}
+      render={() => <h3>Please select a topic.</h3>}
+    />
   </div>
 );
 
@@ -56,41 +63,5 @@ const Topic = ({ match }) => (
     <h3>{match.params.topicId}</h3>
   </div>
 );
-
-////////////////////////////////////////////////////////////
-// then our route config
-const routes = [
-  {
-    path: "/",
-    component: Home
-  },
-  {
-    path: '/about',
-    component: About
-  },
-  {
-    path: '/topics',
-    component: Topics,
-    routes: [
-      {
-        path: '/topics/:topicId',
-        component: Topic
-      }
-    ]
-  }
-];
-
-// wrap <Route> and use this everywhere instead, then when
-// sub routes are added to any route it'll work
-const RouteWithSubRoutes = route => (
-  <Route
-    path={route.path}
-    render={props => (
-      // pass the sub-routes down to keep nesting
-      <route.component {...props} routes={route.routes} />
-    )}
-  />
-);
-
 
 export default BasicExample
