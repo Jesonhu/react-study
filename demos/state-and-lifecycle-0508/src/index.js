@@ -30,7 +30,7 @@ class ShowLifecycle extends React.Component {
   }
 
 	/** 组件挂载完成时候触发的生命周期函数 */
-	componentDidMount(){
+	componentDidMount() {
     const delayTime = this.props.useDelayTime || 1000
     this.timerId = setInterval(() => {
       this.tick()
