@@ -21,7 +21,7 @@
 + [高级指引](https://react.docschina.org/docs/accessibility.html)
   + [无障碍](./docs/high-accessibility.md)
   + [代码分割](./docs/high-code-splitting.md)
-  + Context
+  + [Context](./docs/high-context.md)
   + 错误边界
   + Refs 转发
   + Fragments
